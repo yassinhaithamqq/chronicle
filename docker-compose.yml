@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    command: uvicorn apps.api.main:app --host 0.0.0.0 --port 8000
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/app/data
+  collector:
+    build: .
+    command: python apps/collector/run.py
+    volumes:
+      - ./data:/app/data
