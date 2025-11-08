@@ -5,24 +5,29 @@ import numpy as np
 _model = None
 _vectorizer = None
 
+
 def _ensure_sbert():
     global _model
     if _model is not None:
         return _model
     try:
         from sentence_transformers import SentenceTransformer
+
         _model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     except Exception:
         _model = None
     return _model
 
+
 def _ensure_tfidf(corpus: List[str]):
     global _vectorizer
     if _vectorizer is None:
         from sklearn.feature_extraction.text import TfidfVectorizer
-        _vectorizer = TfidfVectorizer(max_features=4096, ngram_range=(1,2))
+
+        _vectorizer = TfidfVectorizer(max_features=4096, ngram_range=(1, 2))
         _vectorizer.fit(corpus)
     return _vectorizer
+
 
 def encode(texts: List[str]) -> np.ndarray:
     m = _ensure_sbert()

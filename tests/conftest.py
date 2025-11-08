@@ -1,4 +1,5 @@
 """Pytest configuration and fixtures."""
+
 import os
 import tempfile
 import pytest
@@ -9,14 +10,14 @@ from pathlib import Path
 @pytest.fixture
 def temp_db():
     """Create a temporary database for testing."""
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.db', delete=False) as f:
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".db", delete=False) as f:
         db_path = f.name
-    
+
     # Set environment variable
-    os.environ['CHRONICLE_DB'] = db_path
-    
+    os.environ["CHRONICLE_DB"] = db_path
+
     yield db_path
-    
+
     # Cleanup
     try:
         os.unlink(db_path)
@@ -34,7 +35,7 @@ def sample_docs():
             "title": "AI breakthrough announced",
             "url": "https://example.com/1",
             "text": "Scientists announce major AI breakthrough in machine learning",
-            "ts": 1000000000
+            "ts": 1000000000,
         },
         {
             "source": "test",
@@ -42,7 +43,7 @@ def sample_docs():
             "title": "New AI model released",
             "url": "https://example.com/2",
             "text": "Tech company releases new artificial intelligence model",
-            "ts": 1000000001
+            "ts": 1000000001,
         },
         {
             "source": "test",
@@ -50,8 +51,8 @@ def sample_docs():
             "title": "Space mission success",
             "url": "https://example.com/3",
             "text": "NASA announces successful Mars mission completion",
-            "ts": 1000000002
-        }
+            "ts": 1000000002,
+        },
     ]
 
 
@@ -62,5 +63,5 @@ def sample_texts():
         "This is a document about machine learning and AI",
         "Another article discussing artificial intelligence",
         "Something completely different about space exploration",
-        "Yet another AI and machine learning discussion"
+        "Yet another AI and machine learning discussion",
     ]

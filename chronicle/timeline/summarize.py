@@ -4,10 +4,11 @@ import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
+
 def summarize(docs: List[Dict], max_sentences: int = 3) -> str:
     texts = [d.get("text") or d.get("title") or "" for d in docs]
     joined = " ".join(texts)
-    sents = re.split(r'(?<=[.!?])\s+', joined)
+    sents = re.split(r"(?<=[.!?])\s+", joined)
     if len(sents) <= max_sentences:
         return " ".join(sents[:max_sentences]).strip()
     vec = TfidfVectorizer(max_features=2048).fit(sents)
