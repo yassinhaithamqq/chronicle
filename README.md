@@ -32,26 +32,8 @@ Chronicle is a production-ready event detection system that transforms noisy rea
 
 ## Installation
 
-**Option 2: Manual Setup**
+### From PyPI (coming soon)
 ```bash
-**Option 3: From Source**
-```bash
-# 1) Clone and install
-git clone https://github.com/dukeblue1994-glitch/chronicle.git
-cd chronicle
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-
-# 2) Start the collector
-python apps/collector/run.py
-
-# 3) Start the API
-python apps/api/main.py
-
-# 4) Open API docs at http://127.0.0.1:8000/docs
-```
-
-## API UsageFrom Source**
 pip install chronicle-events
 ```
 
@@ -67,9 +49,9 @@ cd chronicle
 pip install -e ".[dev]"
 ```
 
-## Quick start
+## Quick Start
 
-### Using the Package
+### Using as a Library
 ```python
 from chronicle.nlp import encode
 from chronicle.cluster import deduplicate, cluster_embeddings
@@ -94,24 +76,36 @@ docker-compose up
 # API available at http://localhost:8000/docs
 ```
 
-**Option 2: Manual Setup**
-
+**Option 2: Command Line Tools**
 ```bash
-# 1) Create venv and install
+# Install package
+pip install chronicle-events
+
+# Start the collector (pulls HN every 60s)
+chronicle-collector
+
+# In another terminal, start the API
+chronicle-api
+
+# Or run clustering manually
+chronicle-cluster
+```
+
+**Option 3: From Source**
+```bash
+git clone https://github.com/dukeblue1994-glitch/chronicle.git
+cd chronicle
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 2) Start the collector in one shell (pulls HN every 60s)
+# Start the collector
 python apps/collector/run.py
 
-# 3) In another shell, start the API
-uvicorn apps.api.main:app --reload
+# In another terminal, start the API
+python apps/api/main.py
 
-# 4) Open docs
-# http://127.0.0.1:8000/docs
+# Open API docs at http://127.0.0.1:8000/docs
 ```
-
-## Endpoints
 
 ## API Usage
 
